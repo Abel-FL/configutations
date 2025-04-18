@@ -7,7 +7,7 @@ spring:
   main:
     allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:postgresql://user-postgres:5432/msuserdb
+    url: jdbc:postgresql://localhost:5432/msuserdb
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
