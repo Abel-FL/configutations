@@ -4,7 +4,8 @@ server:
 spring:
   application:
     name: user-service
-
+  main:
+    allow-bean-definition-overriding: true
   datasource:
     url: jdbc:postgresql://localhost:5432/msuserdb
     username: postgres
