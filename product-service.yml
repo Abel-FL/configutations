@@ -1,12 +1,12 @@
 server:
-  port: 0 # Puerto aleatorio (puede cambiarlo a 8081, 8082, etc., si prefieres uno fijo)
+  port: 8082 # Puedes usar 0 para aleatorio, pero aquí fijo para exponerlo
 
 spring:
   application:
     name: product-service
 
   datasource:
-    url: jdbc:postgresql://produc_service_database:5432/productdb
+    url: jdbc:postgresql://product-db:5432/productdb
     username: admin
     password: admin
     driver-class-name: org.postgresql.Driver
@@ -20,11 +20,11 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   config:
-    import: optional:configserver:http://localhost:8888
+    import: optional:configserver:http://config-server:8888
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://discovery-service:8761/eureka
   instance:
     prefer-ip-address: true
