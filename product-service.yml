@@ -1,14 +1,14 @@
 server:
-  port: 8082
+  port: 8081 # Debe coincidir con el interno del contenedor
 
 spring:
   application:
-    name: product-service
+    name: ms-product-service
 
   datasource:
     url: jdbc:postgresql://postgresql:5432/productdb
-    username: admin
-    password: admin
+    username: alibou
+    password: alibou
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -19,12 +19,9 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-  config:
-    import: optional:configserver:http://config-server:8888
-
 eureka:
   client:
     service-url:
-      defaultZone: http://discovery:8761/eureka
+      defaultZone: http://discovery-service:8761/eureka
   instance:
     prefer-ip-address: true
