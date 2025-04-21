@@ -1,12 +1,12 @@
 server:
-  port: 8082 # Puedes usar 0 para aleatorio, pero aquí fijo para exponerlo
+  port: 8082
 
 spring:
   application:
     name: product-service
 
   datasource:
-    url: jdbc:postgresql://product-db:5432/productdb
+    url: jdbc:postgresql://postgresql:5432/productdb
     username: admin
     password: admin
     driver-class-name: org.postgresql.Driver
@@ -25,6 +25,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://discovery-service:8761/eureka
+      defaultZone: http://discovery:8761/eureka
   instance:
     prefer-ip-address: true
